@@ -8,17 +8,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class XxlJobInfoDaoTest {
 	private static Logger logger = LoggerFactory.getLogger(XxlJobInfoDaoTest.class);
-	
+
 	@Resource
 	private XxlJobInfoDao xxlJobInfoDao;
-	
+
 	@Test
 	public void pageList(){
 		List<XxlJobInfo> list = xxlJobInfoDao.pageList(0, 20, 0, -1, null, null, null);
@@ -29,7 +29,7 @@ public class XxlJobInfoDaoTest {
 
 		List<XxlJobInfo> list2 = xxlJobInfoDao.getJobsByGroup(1);
 	}
-	
+
 	@Test
 	public void save_load(){
 		XxlJobInfo info = new XxlJobInfo();
